@@ -54,7 +54,8 @@ class TQueue{
 
 		const T getFront(){
 			if (isEmpty()){
-				throw "queue empty!";
+				//throw "queue empty!";
+				throw gcnew System::Exception("Queue is full");
 			}
 			return arr[head];
 		}
@@ -64,6 +65,18 @@ class TQueue{
 				throw "queue empty!";
 			}
 			return arr[(tail + 1) % MaxSize];
+		}
+
+		const int getHead(){
+			return head;
+		}
+
+		const int getSize(){
+ 			return countElem;
+		}
+
+		const int getMaxSize(){
+			return MaxSize;
 		}
 };
 
